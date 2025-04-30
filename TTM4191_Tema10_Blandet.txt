@@ -58,181 +58,181 @@ Identifiserer brukere
 Genererer fast lengde verdi fra input
 Teller pakker
 2
-Hva er SV-meldinger brukt til? (195)
+Hva er SV-meldinger brukt til? 
 Overføre synkroniserte måledata
 Forhandle TLS
 DNS-oppslag
 Sende kontrollsignaler
 0
-Hva gjør hashing? (549)
+Hva gjør hashing? 
 Identifiserer brukere
 Komprimerer data
 Genererer fast lengde verdi fra input
 Teller pakker
 2
-Hva gjør et digitalt sertifikat? (456)
+Hva gjør et digitalt sertifikat? 
 Allokerer IP
 Gir tillit til en offentlig nøkkel via signatur
 Sender e-post
 Distribuerer strøm
 1
-Hva gjør ARP? (554)
+Hva gjør ARP? 
 Krypterer forbindelser
 Oversetter domenenavn
 Teller pakker
 Finner MAC-adresse til en IP
 3
-Hva gjør ARP? (554) (473)
+Hva gjør ARP? 
 Oversetter domenenavn
 Teller pakker
 Krypterer forbindelser
 Finner MAC-adresse til en IP
 3
-Hva gjør hashing? (549) (304)
+Hva gjør hashing? 
 Komprimerer data
 Genererer fast lengde verdi fra input
 Teller pakker
 Identifiserer brukere
 1
-Hva gjør ARP? (554) (473) (324)
+Hva gjør ARP? 
 Krypterer forbindelser
 Oversetter domenenavn
 Teller pakker
 Finner MAC-adresse til en IP
 3
-Hva gjør hashing? (549) (304) (176)
+Hva gjør hashing? 
 Komprimerer data
 Teller pakker
 Genererer fast lengde verdi fra input
 Identifiserer brukere
 2
-Hva gjør hashing? (493)
+Hva gjør hashing? 
 Teller pakker
 Identifiserer brukere
 Komprimerer data
 Genererer fast lengde verdi fra input
 3
-Hva gjør et digitalt sertifikat? (895)
+Hva gjør et digitalt sertifikat? 
 Gir tillit til en offentlig nøkkel via signatur
 Allokerer IP
 Sender e-post
 Distribuerer strøm
 0
-Hva gjør et digitalt sertifikat? (456) (714)
+Hva gjør et digitalt sertifikat? 
 Gir tillit til en offentlig nøkkel via signatur
 Distribuerer strøm
 Sender e-post
 Allokerer IP
 0
-Hva gjør et digitalt sertifikat? (456) (714) (741)
+Hva gjør et digitalt sertifikat? 
 Distribuerer strøm
 Allokerer IP
 Sender e-post
 Gir tillit til en offentlig nøkkel via signatur
 3
-Hva gjør et digitalt sertifikat? (202)
+Hva gjør et digitalt sertifikat? 
 Gir tillit til en offentlig nøkkel via signatur
 Sender e-post
 Distribuerer strøm
 Allokerer IP
 0
-Hva gjør ARP? (554) (532)
+Hva gjør ARP? 
 Teller pakker
 Finner MAC-adresse til en IP
 Oversetter domenenavn
 Krypterer forbindelser
 1
-Hva er CSMA/CA? (544)
+Hva er CSMA/CA? 
 Et sertifikat
 En kryptografisk algoritme
 En metode for trådløs tilgang
 En transportprotokoll
 2
-Hva er SV-meldinger brukt til? (195) (487)
+Hva er SV-meldinger brukt til? 
 Sende kontrollsignaler
 Overføre synkroniserte måledata
 Forhandle TLS
 DNS-oppslag
 1
-Hva er CSMA/CA? (120)
+Hva er CSMA/CA? 
 En kryptografisk algoritme
 En transportprotokoll
 En metode for trådløs tilgang
 Et sertifikat
 2
-Hva er SV-meldinger brukt til? (786)
+Hva er SV-meldinger brukt til? 
 DNS-oppslag
 Overføre synkroniserte måledata
 Sende kontrollsignaler
 Forhandle TLS
 1
-Hva gjør et digitalt sertifikat? (875)
+Hva gjør et digitalt sertifikat? 
 Distribuerer strøm
 Allokerer IP
 Gir tillit til en offentlig nøkkel via signatur
 Sender e-post
 2
-Hva gjør ARP? (554) (532) (711)
+Hva gjør ARP? 
 Krypterer forbindelser
 Teller pakker
 Oversetter domenenavn
 Finner MAC-adresse til en IP
 3
-Hva gjør hashing? (549) (304) (987)
+Hva gjør hashing? 
 Komprimerer data
 Teller pakker
 Identifiserer brukere
 Genererer fast lengde verdi fra input
 3
-Hva gjør et digitalt sertifikat? (875) (183)
+Hva gjør et digitalt sertifikat? 
 Distribuerer strøm
 Gir tillit til en offentlig nøkkel via signatur
 Allokerer IP
 Sender e-post
 1
-Hvilket lag bruker portnummer? (317)
+Hvilket lag bruker portnummer? 
 Linklaget
 Nettverkslaget
 Transportlaget
 Applikasjonslaget
 2
-Hva gjør ARP? (554) (473) (324) (583)
+Hva gjør ARP? 
 Finner MAC-adresse til en IP
 Krypterer forbindelser
 Teller pakker
 Oversetter domenenavn
 0
-Hvilket lag bruker portnummer? (386)
+Hvilket lag bruker portnummer? 
 Linklaget
 Applikasjonslaget
 Transportlaget
 Nettverkslaget
 2
-Hva gjør ARP? (554) (532) (711) (502)
+Hva gjør ARP? 
 Teller pakker
 Krypterer forbindelser
 Oversetter domenenavn
 Finner MAC-adresse til en IP
 3
-Hva er hovedforskjellen på HTTP og SMTP? (294)
+Hva er hovedforskjellen på HTTP og SMTP? 
 Begge er for e-post
 Begge krypterer data
 HTTP er for web, SMTP for e-post
 SMTP er for web, HTTP for e-post
 2
-Hva er CSMA/CA? (120) (964)
+Hva er CSMA/CA? 
 En kryptografisk algoritme
 Et sertifikat
 En transportprotokoll
 En metode for trådløs tilgang
 3
-Hva gjør et digitalt sertifikat? (895) (324)
+Hva gjør et digitalt sertifikat? 
 Sender e-post
 Gir tillit til en offentlig nøkkel via signatur
 Allokerer IP
 Distribuerer strøm
 1
-Hva gjør et digitalt sertifikat? (456) (429)
+Hva gjør et digitalt sertifikat? 
 Allokerer IP
 Distribuerer strøm
 Gir tillit til en offentlig nøkkel via signatur
