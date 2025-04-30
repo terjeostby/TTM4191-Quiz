@@ -1,0 +1,240 @@
+Hva står CSMA/CA for i Wi-Fi?
+Carrier Sense Multiple Access with Collision Avoidance
+Critical Signal Management and Communication Agreement
+Collision Sensing Media Access/Carrier Arbitration
+Carrier Synced Multicast Algorithm/Connection Authentication
+0
+Hva er funksjonen til RTS/CTS i Wi-Fi?
+Kryptere forbindelsen
+Forhindre skjulte node-kollisjoner
+Håndtere ARP-forespørsler
+Fordele IP-adresser
+1
+Hva er SIFS i 802.11?
+Sikkerhetsprotokoll
+Kort pause brukt før ACK
+Lang pause mellom pakker
+Feilmeldingssystem
+1
+Hva er forskjellen på DIFS og SIFS?
+DIFS er kortere
+SIFS brukes etter data, DIFS før sending
+SIFS er bare i Ethernet
+DIFS brukes kun med RTS/CTS
+1
+Hva er Network Slicing i 5G?
+Fysisk segmentering av kobberkabler
+Deling av MAC-tabeller
+Virtuell oppdeling av nettverket etter QoS-krav
+Opplasting av firmware
+2
+Hva er URLLC i 5G?
+En feilkode
+En lav-latens kommunikasjonsprofil
+En MAC-adresseversjon
+En Wi-Fi standard
+1
+Hva skjer ved handover i mobilnett?
+Enhet kobles fra nettet
+Ny IP tildeles
+Enheten bytter base-stasjon uten å miste forbindelsen
+MAC-adressen endres
+2
+Hva brukes 802.11 til?
+Ethernet-nettverk
+Mobiltelefoni
+Trådløse LAN
+Strømovervåking
+2
+Hva er typisk maks overføringsrate i 802.11b?
+1 Mbps
+11 Mbps
+54 Mbps
+100 Mbps
+1
+Hva er hovedfordelen med 5G for Smart Grid?
+Lavere strømregning
+Lengre rekkevidde
+Lav latens og høy pålitelighet
+Støtter bare tale
+2
+Hva er funksjonen til RTS/CTS i Wi-Fi? (3154)
+Fordele IP-adresser
+Forhindre skjulte node-kollisjoner
+Kryptere forbindelsen
+Håndtere ARP-forespørsler
+1
+Hva er funksjonen til RTS/CTS i Wi-Fi? (3154) (3757)
+Håndtere ARP-forespørsler
+Kryptere forbindelsen
+Fordele IP-adresser
+Forhindre skjulte node-kollisjoner
+3
+Hva er funksjonen til RTS/CTS i Wi-Fi? (9926)
+Håndtere ARP-forespørsler
+Fordele IP-adresser
+Forhindre skjulte node-kollisjoner
+Kryptere forbindelsen
+2
+Hva brukes 802.11 til? (5755)
+Ethernet-nettverk
+Mobiltelefoni
+Trådløse LAN
+Strømovervåking
+2
+Hva brukes 802.11 til? (5216)
+Ethernet-nettverk
+Strømovervåking
+Trådløse LAN
+Mobiltelefoni
+2
+Hva er funksjonen til RTS/CTS i Wi-Fi? (9926) (6012)
+Håndtere ARP-forespørsler
+Fordele IP-adresser
+Forhindre skjulte node-kollisjoner
+Kryptere forbindelsen
+2
+Hva brukes 802.11 til? (5216) (8809)
+Strømovervåking
+Trådløse LAN
+Mobiltelefoni
+Ethernet-nettverk
+1
+Hva brukes 802.11 til? (3458)
+Mobiltelefoni
+Ethernet-nettverk
+Trådløse LAN
+Strømovervåking
+2
+Hva brukes 802.11 til? (5216) (3817)
+Strømovervåking
+Ethernet-nettverk
+Trådløse LAN
+Mobiltelefoni
+2
+Hva brukes 802.11 til? (5216) (8809) (6242)
+Ethernet-nettverk
+Mobiltelefoni
+Trådløse LAN
+Strømovervåking
+2
+Hva er SIFS i 802.11? (9167)
+Kort pause brukt før ACK
+Feilmeldingssystem
+Lang pause mellom pakker
+Sikkerhetsprotokoll
+0
+Hva brukes 802.11 til? (3458) (2060)
+Strømovervåking
+Trådløse LAN
+Mobiltelefoni
+Ethernet-nettverk
+1
+Hva er funksjonen til RTS/CTS i Wi-Fi? (9926) (6012) (2568)
+Forhindre skjulte node-kollisjoner
+Fordele IP-adresser
+Håndtere ARP-forespørsler
+Kryptere forbindelsen
+0
+Hva brukes 802.11 til? (5216) (7955)
+Trådløse LAN
+Ethernet-nettverk
+Mobiltelefoni
+Strømovervåking
+0
+Hva er funksjonen til RTS/CTS i Wi-Fi? (3154) (1970)
+Håndtere ARP-forespørsler
+Kryptere forbindelsen
+Fordele IP-adresser
+Forhindre skjulte node-kollisjoner
+3
+Hva er SIFS i 802.11? (1168)
+Kort pause brukt før ACK
+Feilmeldingssystem
+Sikkerhetsprotokoll
+Lang pause mellom pakker
+0
+Hva er funksjonen til RTS/CTS i Wi-Fi? (9926) (6012) (1385)
+Forhindre skjulte node-kollisjoner
+Håndtere ARP-forespørsler
+Kryptere forbindelsen
+Fordele IP-adresser
+0
+Hva er SIFS i 802.11? (1168) (7723)
+Sikkerhetsprotokoll
+Feilmeldingssystem
+Kort pause brukt før ACK
+Lang pause mellom pakker
+2
+Hva er Network Slicing i 5G? (2500)
+Fysisk segmentering av kobberkabler
+Opplasting av firmware
+Deling av MAC-tabeller
+Virtuell oppdeling av nettverket etter QoS-krav
+3
+Hva er SIFS i 802.11? (1168) (7723) (7602)
+Lang pause mellom pakker
+Feilmeldingssystem
+Sikkerhetsprotokoll
+Kort pause brukt før ACK
+3
+Hva er forskjellen på DIFS og SIFS? (7995)
+DIFS brukes kun med RTS/CTS
+SIFS er bare i Ethernet
+SIFS brukes etter data, DIFS før sending
+DIFS er kortere
+2
+Hva brukes 802.11 til? (5216) (8809) (2561)
+Mobiltelefoni
+Ethernet-nettverk
+Trådløse LAN
+Strømovervåking
+2
+Hva brukes 802.11 til? (5216) (3817) (1796)
+Mobiltelefoni
+Trådløse LAN
+Strømovervåking
+Ethernet-nettverk
+1
+Hva er funksjonen til RTS/CTS i Wi-Fi? (9926) (6012) (2568) (7428)
+Kryptere forbindelsen
+Fordele IP-adresser
+Håndtere ARP-forespørsler
+Forhindre skjulte node-kollisjoner
+3
+Hva er Network Slicing i 5G? (9005)
+Fysisk segmentering av kobberkabler
+Deling av MAC-tabeller
+Virtuell oppdeling av nettverket etter QoS-krav
+Opplasting av firmware
+2
+Hva brukes 802.11 til? (3458) (2341)
+Strømovervåking
+Trådløse LAN
+Ethernet-nettverk
+Mobiltelefoni
+1
+Hva brukes 802.11 til? (5216) (8809) (3395)
+Mobiltelefoni
+Strømovervåking
+Ethernet-nettverk
+Trådløse LAN
+3
+Hva er URLLC i 5G? (1621)
+En Wi-Fi standard
+En lav-latens kommunikasjonsprofil
+En MAC-adresseversjon
+En feilkode
+1
+Hva brukes 802.11 til? (3458) (2060) (3097)
+Trådløse LAN
+Ethernet-nettverk
+Mobiltelefoni
+Strømovervåking
+0
+Hva brukes 802.11 til? (5216) (8809) (2561) (1678)
+Strømovervåking
+Ethernet-nettverk
+Mobiltelefoni
+Trådløse LAN
+3

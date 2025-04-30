@@ -1,0 +1,240 @@
+Hva er en Smart Grid?
+Et tradisjonelt strømnett med manuell styring
+Et strømnett med digital overvåking og automatisering
+Et isolert kraftverk
+En batteribank for husholdning
+1
+Hva muliggjør toveis strømflyt i Smart Grid?
+Sentralisert produksjon
+Mikrobølgeovner
+Distribuerte energikilder
+Faste måleavlesninger
+2
+Hva er AMI?
+Analog måleteknikk
+Program for energieffektivitet
+Advanced Metering Infrastructure
+Automatisk motorinspeksjon
+2
+Hva er hovedfordelen med Smart Grid?
+Redusert overvåking
+Økt manuelt arbeid
+Forbedret pålitelighet og sanntidsovervåking
+Mer fossil energi
+2
+Hvilket lag i Smart Grid-arkitekturen håndterer beslutninger og automatisering?
+Fysisk lag
+Kontroll-/automatiseringslag
+Applikasjonslaget
+Kommunikasjonslaget
+1
+Hva betyr 'prosumer' i Smart Grid-sammenheng?
+En enhet som bare bruker strøm
+Et verktøy for strømreduksjon
+En bruker som både produserer og forbruker strøm
+En administrativ rolle i kraftselskap
+2
+Hva er SCADA i Smart Grid?
+En type kraftledning
+Et overvåkings- og fjernstyringssystem
+Et batterilager
+En fysisk komponent
+1
+Hva gjør et HEMS-system?
+Styrer husets energiforbruk
+Lager strøm
+Måler temperatur
+Overvåker værmeldinger
+0
+Hva brukes NAN til i Smart Grid?
+Overvåke nettsider
+Koble naboer til fjernvarme
+Kommunikasjon mellom målere og konsentrator
+Styring av vanntrykk
+2
+Hva brukes HAN til?
+Måling i høyspentnett
+Kommunikasjon mellom apparater og energistyring i hjemmet
+Styring av turbiner
+Lagring av data
+1
+Hva er SCADA i Smart Grid? (643)
+En type kraftledning
+Et overvåkings- og fjernstyringssystem
+En fysisk komponent
+Et batterilager
+1
+Hva er en Smart Grid? (418)
+Et strømnett med digital overvåking og automatisering
+Et isolert kraftverk
+Et tradisjonelt strømnett med manuell styring
+En batteribank for husholdning
+0
+Hva brukes HAN til? (962)
+Måling i høyspentnett
+Styring av turbiner
+Lagring av data
+Kommunikasjon mellom apparater og energistyring i hjemmet
+3
+Hva er SCADA i Smart Grid? (643) (858)
+En fysisk komponent
+Et batterilager
+Et overvåkings- og fjernstyringssystem
+En type kraftledning
+2
+Hva betyr 'prosumer' i Smart Grid-sammenheng? (767)
+Et verktøy for strømreduksjon
+En enhet som bare bruker strøm
+En administrativ rolle i kraftselskap
+En bruker som både produserer og forbruker strøm
+3
+Hva brukes HAN til? (962) (513)
+Kommunikasjon mellom apparater og energistyring i hjemmet
+Styring av turbiner
+Måling i høyspentnett
+Lagring av data
+0
+Hva er SCADA i Smart Grid? (822)
+En fysisk komponent
+Et batterilager
+En type kraftledning
+Et overvåkings- og fjernstyringssystem
+3
+Hva er AMI? (690)
+Automatisk motorinspeksjon
+Program for energieffektivitet
+Analog måleteknikk
+Advanced Metering Infrastructure
+3
+Hva er en Smart Grid? (158)
+Et strømnett med digital overvåking og automatisering
+Et tradisjonelt strømnett med manuell styring
+En batteribank for husholdning
+Et isolert kraftverk
+0
+Hva betyr 'prosumer' i Smart Grid-sammenheng? (767) (484)
+En bruker som både produserer og forbruker strøm
+En enhet som bare bruker strøm
+En administrativ rolle i kraftselskap
+Et verktøy for strømreduksjon
+0
+Hva brukes HAN til? (962) (244)
+Måling i høyspentnett
+Styring av turbiner
+Kommunikasjon mellom apparater og energistyring i hjemmet
+Lagring av data
+2
+Hva er SCADA i Smart Grid? (643) (575)
+En fysisk komponent
+Et overvåkings- og fjernstyringssystem
+En type kraftledning
+Et batterilager
+1
+Hva er hovedfordelen med Smart Grid? (880)
+Økt manuelt arbeid
+Redusert overvåking
+Forbedret pålitelighet og sanntidsovervåking
+Mer fossil energi
+2
+Hva betyr 'prosumer' i Smart Grid-sammenheng? (767) (484) (158)
+En enhet som bare bruker strøm
+En bruker som både produserer og forbruker strøm
+En administrativ rolle i kraftselskap
+Et verktøy for strømreduksjon
+1
+Hvilket lag i Smart Grid-arkitekturen håndterer beslutninger og automatisering? (757)
+Kontroll-/automatiseringslag
+Kommunikasjonslaget
+Applikasjonslaget
+Fysisk lag
+0
+Hva brukes HAN til? (962) (975)
+Kommunikasjon mellom apparater og energistyring i hjemmet
+Måling i høyspentnett
+Lagring av data
+Styring av turbiner
+0
+Hva brukes NAN til i Smart Grid? (768)
+Kommunikasjon mellom målere og konsentrator
+Overvåke nettsider
+Styring av vanntrykk
+Koble naboer til fjernvarme
+0
+Hva er SCADA i Smart Grid? (822) (784)
+Et overvåkings- og fjernstyringssystem
+En type kraftledning
+Et batterilager
+En fysisk komponent
+0
+Hva er SCADA i Smart Grid? (822) (729)
+En fysisk komponent
+Et batterilager
+En type kraftledning
+Et overvåkings- og fjernstyringssystem
+3
+Hva er SCADA i Smart Grid? (643) (858) (165)
+Et overvåkings- og fjernstyringssystem
+En fysisk komponent
+Et batterilager
+En type kraftledning
+0
+Hva brukes HAN til? (635)
+Måling i høyspentnett
+Styring av turbiner
+Kommunikasjon mellom apparater og energistyring i hjemmet
+Lagring av data
+2
+Hva brukes HAN til? (913)
+Lagring av data
+Kommunikasjon mellom apparater og energistyring i hjemmet
+Måling i høyspentnett
+Styring av turbiner
+1
+Hva er SCADA i Smart Grid? (643) (575) (758)
+En fysisk komponent
+En type kraftledning
+Et overvåkings- og fjernstyringssystem
+Et batterilager
+2
+Hva er AMI? (373)
+Advanced Metering Infrastructure
+Analog måleteknikk
+Program for energieffektivitet
+Automatisk motorinspeksjon
+0
+Hva betyr 'prosumer' i Smart Grid-sammenheng? (767) (484) (948)
+En enhet som bare bruker strøm
+En administrativ rolle i kraftselskap
+Et verktøy for strømreduksjon
+En bruker som både produserer og forbruker strøm
+3
+Hvilket lag i Smart Grid-arkitekturen håndterer beslutninger og automatisering? (757) (840)
+Kontroll-/automatiseringslag
+Fysisk lag
+Kommunikasjonslaget
+Applikasjonslaget
+0
+Hva brukes HAN til? (962) (769)
+Kommunikasjon mellom apparater og energistyring i hjemmet
+Styring av turbiner
+Lagring av data
+Måling i høyspentnett
+0
+Hva er en Smart Grid? (339)
+En batteribank for husholdning
+Et tradisjonelt strømnett med manuell styring
+Et isolert kraftverk
+Et strømnett med digital overvåking og automatisering
+3
+Hva betyr 'prosumer' i Smart Grid-sammenheng? (767) (484) (980)
+Et verktøy for strømreduksjon
+En bruker som både produserer og forbruker strøm
+En administrativ rolle i kraftselskap
+En enhet som bare bruker strøm
+1
+Hva betyr 'prosumer' i Smart Grid-sammenheng? (263)
+En administrativ rolle i kraftselskap
+Et verktøy for strømreduksjon
+En enhet som bare bruker strøm
+En bruker som både produserer og forbruker strøm
+3
