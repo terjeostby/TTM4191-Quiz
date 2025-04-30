@@ -5,309 +5,192 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Quiz for Eksamen</title>
   <style>
+    :root {
+      --bg: #f7f9fc;
+      --text: #222;
+      --card-bg: #fff;
+      --button-bg: #004894;
+      --button-text: #fff;
+      --button-hover: #0056b3;
+      --shadow: rgba(0,0,0,0.08);
+    }
+    body.dark-mode {
+      --bg: #1e1e1e;
+      --text: #eee;
+      --card-bg: #2e2e2e;
+      --button-bg: #555;
+      --button-text: #fff;
+      --button-hover: #666;
+      --shadow: rgba(0,0,0,0.5);
+    }
+    *, *::before, *::after { box-sizing: border-box; }
     body {
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f7f9fc;
+      background-color: var(--bg);
+      color: var(--text);
       max-width: 700px;
       margin: 20px auto;
       padding: 20px;
       border-radius: 12px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+      box-shadow: 0 8px 25px var(--shadow);
+      transition: background 0.3s, color 0.3s;
     }
-    h1 {
-      text-align: center;
-      color: #333;
-      font-size: clamp(24px, 5vw, 36px);
-      margin-bottom: 20px;
+    h1 { text-align: center; font-size: clamp(24px,5vw,36px); margin-bottom:20px; }
+    .controls {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+      margin-bottom: 10px;
     }
-    label {
-      display: block;
-      margin-top: 10px;
-      font-size: clamp(16px, 4vw, 18px);
-      color: #000;
-    }
-    select {
-      width: 100%;
-      padding: 10px;
-      font-size: clamp(16px, 4vw, 18px);
-      border-radius: 6px;
-      border: 1px solid #ccc;
-      box-sizing: border-box;
-    }
-    button {
-      width: 100%;
-      background: #004894;
-      color: #fff;
+    #darkToggle {
+      background: var(--button-bg);
+      color: var(--button-text);
       border: none;
-      padding: 10px;
-      margin-top: 15px;
+      padding: 8px 12px;
       border-radius: 6px;
       cursor: pointer;
       transition: background 0.3s;
-      font-size: clamp(16px, 2vw, 18px);
+      font-size: clamp(14px,3vw,16px);
     }
-    button:hover {
-      background: #0056b3;
-    }
-    .question {
-      font-size: clamp(18px, 5vw, 22px);
-      margin: 25px 0 15px;
-      font-weight: 500;
-      color: #222;
-    }
-    .option {
-      display: block;
+    #darkToggle:hover { background: var(--button-hover); }
+    label { font-size: clamp(16px,4vw,18px); }
+    select {
       width: 100%;
-      text-align: left;
-      padding: 12px;
-      margin: 10px 0;
-      border: 1px solid #ccc;
+      font-size: clamp(16px,4vw,18px);
+      padding: 10px;
       border-radius: 6px;
-      background: #fff;
-      cursor: pointer;
-      transition: background 0.2s;
-      font-size: clamp(16px, 4.5vw, 18px);
+      border: 1px solid #ccc;
     }
-    .option:hover { background: #f1f1f1; }
-    .option:disabled { opacity: 0.6; cursor: default; }
-    #feedback, #score {
-      text-align: center;
-      font-weight: bold;
-      font-size: clamp(16px, 4.5vw, 18px);
-      margin-top: 20px;
+    button.primary {
+      font-size: clamp(16px,4vw,18px);
+      width:100%; padding:10px;
+      border-radius:6px; border:none;
+      background: var(--button-bg);
+      color: var(--button-text);
+      cursor:pointer;
+      transition:background 0.3s;
+      margin-top:10px;
     }
-    #progress {
-      text-align: center;
-      font-size: clamp(14px, 4vw, 16px);
-      color: #555;
-      margin-top: 10px;
+    button.primary:hover { background: var(--button-hover); }
+    .question { font-size:clamp(18px,5vw,22px); margin:25px 0 15px; }
+    .option {
+      display:block; width:100%; text-align:left; padding:12px;
+      margin:10px 0; border:1px solid #ccc; border-radius:6px;
+      background: var(--card-bg); color: var(--text);
+      cursor:pointer; transition: background 0.2s;
     }
-
-    /* Flashcard CSS */
-    .flashcard {
-      perspective: 1000px;
-      width: 100%;
-      max-width: 400px;
-      height: 400px;
-      margin: 40px auto;
-      cursor: pointer;
-      touch-action: pan-y;
-    }
-    .flashcard-inner {
-      width: 100%;
-      height: 100%;
-      border-radius: 20px;
-      transform-style: preserve-3d;
-      transition: transform 0.6s ease;
-      position: relative;
-    }
-    .flipped .flashcard-inner { transform: rotateY(180deg); }
-    .flashcard-front, .flashcard-back {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      border-radius: 20px;
-      background: #fff;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-      backface-visibility: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 30px;
-      box-sizing: border-box;
-      font-size: clamp(16px, 2vw, 20px);
-      overflow-wrap: break-word;
-    }
-    .flashcard-back {
-      transform: rotateY(180deg);
-      font-style: italic;
-    }
-    .flashcard-controls {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 30px;
-    }
-    .flashcard-controls button {
-      background: none;
-      border: none;
-      color: #004894;
-      font-size: 2.5rem;
-      cursor: pointer;
-      padding: 0;
-      width: 2.5rem;
-      height: 2.5rem;
-      visibility: visible;
-    }
-    #flashcard-progress {
-      flex: 1;
-      text-align: center;
-      font-size: clamp(14px, 4vw, 16px);
-      color: #333;
-    }
+    .option:hover { background: #ddd; }
+    body.dark-mode .option:hover { color: #000; }
+    .option:disabled { opacity:0.6; cursor:default; }
+    #feedback, #score, #progress { text-align:center; margin-top:20px; }
+    /* Flashcard */
+    .flashcard { perspective:1000px; width:100%; max-width:400px; height:400px; margin:40px auto; position:relative; touch-action:pan-y; }
+    .flashcard-inner { width:100%; height:100%; position:absolute; top:0; left:0; border-radius:20px; transform-style:preserve-3d; transition:transform 0.6s ease; }
+    .flipped .flashcard-inner { transform:rotateY(180deg); }
+    .flashcard-front, .flashcard-back { position:absolute; width:100%; height:100%; border-radius:20px; backface-visibility:hidden; display:flex; align-items:center; justify-content:center; padding:30px; background: var(--card-bg); color: var(--text); box-shadow: 0 6px 20px var(--shadow); overflow-wrap:break-word; }
+    .flashcard-back { transform:rotateY(180deg); font-style:italic; }
+    .flashcard-controls { display:flex; justify-content:space-between; align-items:center; margin-top:30px; }
+    .flashcard-controls button { background:none; border:none; color: var(--button-bg); font-size:2.5rem; cursor:pointer; visibility:visible; }
+    #flashcard-progress { flex:1; text-align:center; }
+    /* Slide animation */
+    @keyframes slideOutLeft { from{transform:translateX(0);} to{transform:translateX(-100%);} }
+    @keyframes slideInRight { from{transform:translateX(100%);} to{transform:translateX(0);} }
+    @keyframes slideOutRight { from{transform:translateX(0);} to{transform:translateX(100%);} }
+    @keyframes slideInLeft { from{transform:translateX(-100%);} to{transform:translateX(0);} }
+    .slide-out-left { animation: slideOutLeft 0.2s forwards; }
+    .slide-in-right { animation: slideInRight 0.2s forwards; }
+    .slide-out-right { animation: slideOutRight 0.2s forwards; }
+    .slide-in-left { animation: slideInLeft 0.2s forwards; }
   </style>
 </head>
 <body>
-  <h1>TTM4191 flervalg</h1>
+  <button id="darkToggle">Dark Mode</button>  
+  <h1>TTM4191 Flervalg og flashcards</h1>
+  <div class="controls">
+    <label for="temaSelect">Velg tema:</label>
+    <select id="temaSelect">
+      <option value="TTM4191_Tema1_SmartGrid.txt">Smart Grid – definisjon, struktur og arkitektur</option>
+      <option value="TTM4191_Tema2_Protokoller.txt">Kommunikasjonsprotokoller i Smart Grid</option>
+      <option value="TTM4191_Tema3_Protokollstakk.txt">Internettarkitektur og protokollstakken</option>
+      <option value="TTM4191_Tema4_Applikasjonslaget.txt">Applikasjonslaget (HTTP, DNS, SMTP, e-post, RTT)</option>
+      <option value="TTM4191_Tema5_Transportlaget.txt">Transportlaget (TCP, UDP, flow control, congestion control, sockets)</option>
+      <option value="TTM4191_Tema6_Nettverkslaget.txt">Nettverkslaget (IP, ruting, forwarding, CIDR, ARP, fragmentering)</option>
+      <option value="TTM4191_Tema7_Linklaget.txt">Linklaget (Ethernet, MAC, CRC, ARP, framing, VLAN, CSMA/CD)</option>
+      <option value="TTM4191_Tema8_Wireless.txt">Trådløse og mobile nettverk (Wi-Fi, 802.11, 5G, handover, RTS/CTS)</option>
+      <option value="TTM4191_Tema9_Kryptografi.txt">Kryptografi og informasjonssikkerhet (hash, MAC, signatur, PGP, TLS, sertifikater)</option>
+      <option value="TTM4191_Tema10_Blandet.txt">Blandede spørsmål fra hele faget</option>
+    </select>
+  </div>
+  <button class="primary" onclick="loadFromTheme('quiz')">Start quiz</button>
+  <button class="primary" onclick="loadFromTheme('flashcard')">Flashcards</button>
 
-  <label for="temaSelect">Velg tema:</label>
-  <select id="temaSelect">
-    <option value="TTM4191_Tema1_SmartGrid.txt">Smart Grid – definisjon, struktur og arkitektur</option>
-    <option value="TTM4191_Tema2_Protokoller.txt">Kommunikasjonsprotokoller i Smart Grid</option>
-    <option value="TTM4191_Tema3_Protokollstakk.txt">Internettarkitektur og protokollstakken</option>
-    <option value="TTM4191_Tema4_Applikasjonslaget.txt">Applikasjonslaget (HTTP, DNS, SMTP, e-post, RTT)</option>
-    <option value="TTM4191_Tema5_Transportlaget.txt">Transportlaget (TCP, UDP, flow control, congestion control, sockets)</option>
-    <option value="TTM4191_Tema6_Nettverkslaget.txt">Nettverkslaget (IP, ruting, forwarding, CIDR, ARP, fragmentering)</option>
-    <option value="TTM4191_Tema7_Linklaget.txt">Linklaget (Ethernet, MAC, CRC, ARP, framing, VLAN, CSMA/CD)</option>
-    <option value="TTM4191_Tema8_Wireless.txt">Trådløse og mobile nettverk (Wi-Fi, 802.11, 5G, handover, RTS/CTS)</option>
-    <option value="TTM4191_Tema9_Kryptografi.txt">Kryptografi og informasjonssikkerhet (hash, MAC, signatur, PGP, TLS, sertifikater)</option>
-    <option value="TTM4191_Tema10_Blandet.txt">Blandede spørsmål fra hele faget</option>
-  </select>
-  <button onclick="loadFromTheme('quiz')">Start quiz</button>
-  <button onclick="loadFromTheme('flashcard')">Flashcards</button>
-
-  <!-- Quiz-seksjon -->
   <div id="quiz-container" style="display:none;">
     <div id="progress"></div>
     <div class="question" id="question"></div>
     <div id="options"></div>
     <div id="feedback"></div>
-    <button onclick="nextQuestion()" id="nextBtn" style="display:none;">Neste</button>
+    <button class="primary" onclick="nextQuestion()" id="nextBtn" style="display:none;">Neste</button>
   </div>
 
-  <!-- Flashcard-seksjon -->
   <div id="flashcard-container" style="display:none;">
-    <div class="flashcard" onclick="this.classList.toggle('flipped')">
+    <div class="flashcard">
       <div class="flashcard-inner">
         <div class="flashcard-front" id="flashcard-question"></div>
         <div class="flashcard-back" id="flashcard-answer"></div>
       </div>
     </div>
     <div class="flashcard-controls">
-      <button onclick="prevFlashcard()" id="prevBtn">←</button>
+      <button onclick="navigateFlash('prev')" id="prevBtn">←</button>
       <div id="flashcard-progress"></div>
-      <button onclick="nextFlashcard()" id="nextBtnFlash">→</button>
+      <button onclick="navigateFlash('next')" id="nextBtnFlash">→</button>
     </div>
   </div>
 
   <div id="score"></div>
 
   <script>
-    // Utils for stokking
-    function shuffleArray(arr) {
-      for (let i = arr.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [arr[i], arr[j]] = [arr[j], arr[i]];
-      }
-      return arr;
-    }
-    function shuffleQuestionOptions(q) {
-      const orig = q.options.map((o, i) => ({ o, i }));
-      const sh = shuffleArray(orig);
-      q.options = sh.map(x => x.o);
-      q.answer = sh.findIndex(x => x.i === q.answer);
-      return q;
-    }
-
-    let questions = [], current = 0, score = 0, flashcardMode = false;
-
-    function loadFromTheme(mode) {
-      const file = document.getElementById('temaSelect').value;
-      flashcardMode = (mode === 'flashcard');
-      fetch(file)
-        .then(r => r.text())
-        .then(txt => {
-          const lines = txt.split('\n').map(l => l.trim()).filter(Boolean);
-          questions = [];
-          for (let i = 0; i < lines.length; i += 6) {
-            questions.push(shuffleQuestionOptions({
-              question: lines[i],
-              options: [lines[i+1], lines[i+2], lines[i+3], lines[i+4]],
-              answer: parseInt(lines[i+5], 10)
-            }));
-          }
-          shuffleArray(questions);
-          current = 0; score = 0;
-          document.getElementById('score').textContent = '';
-          document.getElementById('quiz-container').style.display = flashcardMode ? 'none' : 'block';
-          document.getElementById('flashcard-container').style.display = flashcardMode ? 'block' : 'none';
-          flashcardMode ? showFlashcard() : showQuestion();
-        });
-    }
-
-    // Quiz-funksjoner
-    function showQuestion() {
-      const q = questions[current];
-      document.getElementById('question').textContent = q.question;
-      document.getElementById('feedback').textContent = '';
-      document.getElementById('nextBtn').style.display = 'none';
-      document.getElementById('progress').textContent = `Spørsmål ${current+1} av ${questions.length}`;
-      const optDiv = document.getElementById('options'); optDiv.innerHTML = '';
-      q.options.forEach((opt, i) => {
-        const btn = document.createElement('button');
-        btn.textContent = opt;
-        btn.className = 'option';
-        btn.onclick = () => selectAnswer(i);
-        optDiv.appendChild(btn);
-      });
-    }
-    function selectAnswer(i) {
-      const q = questions[current];
-      const fb = document.getElementById('feedback');
-      if (i === q.answer) { fb.textContent = 'Riktig!'; fb.style.color = 'green'; score++; }
-      else { fb.textContent = `Feil! Riktig svar er: ${q.options[q.answer]}`; fb.style.color = 'red'; }
-      Array.from(document.getElementsByClassName('option')).forEach(b => b.disabled = true);
-      document.getElementById('nextBtn').style.display = 'inline';
-    }
-    function nextQuestion() {
-      current++;
-      if (current < questions.length) showQuestion();
-      else {
-        document.getElementById('quiz-container').style.display = 'none';
-        document.getElementById('score').textContent = `Du fikk ${score} av ${questions.length} riktige!`;
-      }
-    }
-
-    // Flashcard-funksjoner
-    function showFlashcard() {
-      const q = questions[current];
-      document.getElementById('flashcard-question').textContent = q.question;
-      document.getElementById('flashcard-answer').textContent = q.options[q.answer];
-      document.getElementById('flashcard-progress').textContent = `Kort ${current+1} av ${questions.length}`;
-      document.getElementById('prevBtn').style.visibility = current===0 ? 'hidden' : 'visible';
-      document.getElementById('nextBtnFlash').style.visibility = current===questions.length-1 ? 'hidden' : 'visible';
-      document.querySelector('.flashcard').classList.remove('flipped');
-    }
-    function nextFlashcard() { if (current < questions.length-1) { current++; showFlashcard(); } }
-    function prevFlashcard() { if (current > 0) { current--; showFlashcard(); } }
-
-    // Tastatur-navigasjon og swipe
-    document.addEventListener('DOMContentLoaded', () => {
-      // Pil- og space-navigation
-      document.addEventListener('keydown', e => {
-        if (!flashcardMode) return;
-        switch(e.key) {
-          case 'ArrowRight': e.preventDefault(); nextFlashcard(); break;
-          case 'ArrowLeft': e.preventDefault(); prevFlashcard(); break;
-          case ' ':
-          case 'Spacebar': e.preventDefault(); document.querySelector('.flashcard').classList.toggle('flipped'); break;
-        }
-      });
-      // Swipe for mobile
-      const cardEl = document.querySelector('.flashcard');
-      let touchStartX = 0;
-      cardEl.addEventListener('touchstart', e => {
-        touchStartX = e.changedTouches[0].screenX;
-      });
-      cardEl.addEventListener('touchend', e => {
-        const touchEndX = e.changedTouches[0].screenX;
-        const dx = touchEndX - touchStartX;
-        if (Math.abs(dx) > 50) {
-          if (dx < 0) nextFlashcard(); else prevFlashcard();
-        }
-      });
+    // Dark mode toggle
+    const darkToggle = document.getElementById('darkToggle');
+    darkToggle.addEventListener('click', () => {
+      const dark = document.body.classList.toggle('dark-mode');
+      darkToggle.textContent = dark ? 'Light Mode' : 'Dark Mode';
+      localStorage.setItem('darkMode', dark);
     });
+    // Load preference
+    if (localStorage.getItem('darkMode') === 'true') {
+      document.body.classList.add('dark-mode');
+      darkToggle.textContent = 'Light Mode';
+    }
+    // Utility
+    function shuffleArray(arr) { for (let i = arr.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i+1)); [arr[i],arr[j]]=[arr[j],arr[i]]; } return arr; }
+    function shuffleQuestionOptions(q) { const orig=q.options.map((o,i)=>({o,i})); const sh=shuffleArray(orig); q.options=sh.map(x=>x.o); q.answer=sh.findIndex(x=>x.i===q.answer); return q; }
+
+    // State
+    let questions=[],current=0,score=0,flashcardMode=false;
+    const cardEl=document.querySelector('.flashcard');
+
+    // Load theme
+    function loadFromTheme(mode) {
+      flashcardMode=(mode==='flashcard');
+      fetch(document.getElementById('temaSelect').value)
+        .then(res=>res.text())
+        .then(txt=>{ const lines=txt.split('\n').map(l=>l.trim()).filter(Boolean); questions=[]; for (let i=0; i<lines.length; i+=6) { questions.push(shuffleQuestionOptions({ question: lines[i], options: [lines[i+1],lines[i+2],lines[i+3],lines[i+4]], answer: parseInt(lines[i+5],10) })); } shuffleArray(questions); current=0; score=0; document.getElementById('score').textContent=''; document.getElementById('quiz-container').style.display=flashcardMode?'none':'block'; document.getElementById('flashcard-container').style.display=flashcardMode?'block':'none'; flashcardMode?showFlashcardContent():showQuestion(); });
+    }
+    document.getElementById('temaSelect').addEventListener('change',()=>{ loadFromTheme(flashcardMode?'flashcard':'quiz'); });
+
+    // Quiz functions
+    function showQuestion(){ const q=questions[current]; document.getElementById('question').textContent=q.question; document.getElementById('feedback').textContent=''; document.getElementById('nextBtn').style.display='none'; document.getElementById('progress').textContent=`Spørsmål ${current+1} av ${questions.length}`; const optDiv=document.getElementById('options'); optDiv.innerHTML=''; q.options.forEach((opt,i)=>{ const btn=document.createElement('button'); btn.textContent=opt; btn.className='option'; btn.onclick=()=>selectAnswer(i); optDiv.appendChild(btn); }); }
+    function selectAnswer(i){ const q=questions[current]; const fb=document.getElementById('feedback'); if(i===q.answer){ fb.textContent='Riktig!'; fb.style.color='green'; score++; }else{ fb.textContent=`Feil! Riktig svar er: ${q.options[q.answer]}`; fb.style.color='red'; } document.querySelectorAll('.option').forEach(b=>b.disabled=true); document.getElementById('nextBtn').style.display='inline'; }
+    function nextQuestion(){ current++; if(current<questions.length) showQuestion(); else { document.getElementById('quiz-container').style.display='none'; document.getElementById('score').textContent=`Du fikk ${score} av ${questions.length} riktige!`; } }
+
+    // Flashcard functions
+    function showFlashcardContent(){ cardEl.style.transition='none'; cardEl.classList.remove('flipped'); cardEl.offsetHeight; cardEl.style.transition='transform 0.6s ease'; const q=questions[current]; document.getElementById('flashcard-question').textContent=q.question; document.getElementById('flashcard-answer').textContent=q.options[q.answer]; document.getElementById('flashcard-progress').textContent=`Kort ${current+1} av ${questions.length}`; document.getElementById('prevBtn').style.visibility=current===0?'hidden':'visible'; document.getElementById('nextBtnFlash').style.visibility=current===questions.length-1?'hidden':'visible'; }
+    function animateSlide(dir,cb){ cardEl.style.transition='none'; cardEl.classList.remove('flipped'); cardEl.offsetHeight; cardEl.style.transition='transform 0.6s ease'; const out=dir==='next'?'slide-out-left':'slide-out-right'; const inn=dir==='next'?'slide-in-right':'slide-in-left'; cardEl.classList.add(out); cardEl.addEventListener('animationend',function h(){ cardEl.removeEventListener('animationend',h); cardEl.classList.remove(out); cb(); cardEl.classList.add(inn); cardEl.addEventListener('animationend',function h2(){ cardEl.removeEventListener('animationend',h2); cardEl.classList.remove(inn); }); }); }
+    function navigateFlash(dir){ if(dir==='next'&&current<questions.length-1) animateSlide('next',()=>{ current++; showFlashcardContent(); }); if(dir==='prev'&&current>0) animateSlide('prev',()=>{ current--; showFlashcardContent(); }); }
+
+    // Keyboard & swipe
+    document.addEventListener('DOMContentLoaded',()=>{ document.addEventListener('keydown',e=>{ if(flashcardMode){ if(e.key==='ArrowRight'){ e.preventDefault();navigateFlash('next'); } if(e.key==='ArrowLeft'){ e.preventDefault();navigateFlash('prev'); } if(e.key===' '||e.key==='Spacebar'){ e.preventDefault();cardEl.classList.toggle('flipped'); } } else { if(e.key===' '||e.key==='Spacebar'){ e.preventDefault(); if(document.getElementById('nextBtn').style.display!=='none') nextQuestion(); } } }); cardEl.addEventListener('click',()=>{ if(flashcardMode) cardEl.classList.toggle('flipped'); }); let startX=0; cardEl.addEventListener('touchstart',e=>startX=e.changedTouches[0].screenX); cardEl.addEventListener('touchend',e=>{ const dx=e.changedTouches[0].screenX-startX; if(flashcardMode&&Math.abs(dx)>50) navigateFlash(dx<0?'next':'prev'); }); });
   </script>
 </body>
 </html>
