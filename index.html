@@ -15,77 +15,59 @@
       box-shadow: 0 8px 25px rgba(0,0,0,0.08);
     }
     h1 {
-  text-align: center;
-  color: #333;
-  font-size: clamp(24px, 5vw, 36px);
-  margin-bottom: 20px;
-}
+      text-align: center;
+      color: #333;
+      font-size: clamp(24px, 5vw, 36px);
+      margin-bottom: 20px;
+    }
     label {
-  font-size: clamp(16px, 4vw, 18px);
-  color: #000;
-  margin-top: 10px;
-  display: block;
-}
-
-select {
-  font-size: clamp(16px, 4vw, 18px);
-  padding: 10px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-font-size: clamp(16px, 2.5vw, 18px);
-  color: white;
-  border: none;
-  padding: 12px;
-  margin-top: 15px;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  font-size: clamp(16px, 4vw, 18px);
-  width: 100%;
-}
+      font-size: clamp(16px, 4vw, 18px);
+      color: #000;
+      margin-top: 10px;
+      display: block;
+    }
     select {
+      font-size: clamp(16px, 4vw, 18px);
       padding: 10px;
       border-radius: 6px;
       border: 1px solid #ccc;
+      width: 100%;
+      box-sizing: border-box;
     }
     button {
-  background-color: #004894;
-  color: white;
-  border: none;
-  padding: 10px;
+      background-color: #004894;
+      color: white;
+      border: none;
+      padding: 10px;
       margin-top: 15px;
       border-radius: 6px;
       cursor: pointer;
       transition: background-color 0.3s ease;
       font-size: clamp(16px, 2vw, 18px);
-      
+      width: 100%;
     }
     button:hover {
       background-color: #0056b3;
     }
     .question {
-  font-size: clamp(18px, 5vw, 22px);
-  margin: 25px 0 15px 0;
-  font-weight: 500;
-  color: #222;
-}
+      font-size: clamp(18px, 5vw, 22px);
+      margin: 25px 0 15px 0;
+      font-weight: 500;
+      color: #222;
+    }
     .option {
-  background-color: #fff;
-  color: #000;
-  padding: 12px;
-  margin: 10px 0;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-  width: 100%;
-  text-align: left;
-  font-size: clamp(16px, 4.5vw, 18px);
-}
+      background-color: #fff;
+      color: #000;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+      width: 100%;
+      text-align: left;
+      font-size: clamp(16px, 4.5vw, 18px);
+    }
     .option:hover {
       background-color: #f1f1f1;
     }
@@ -93,22 +75,73 @@ font-size: clamp(16px, 2.5vw, 18px);
       opacity: 0.6;
       cursor: default;
     }
-    #feedback {
-  margin-top: 20px;
-  font-weight: bold;
-  font-size: clamp(16px, 4.5vw, 18px);
-}
-    #score {
-  font-size: clamp(18px, 5.5vw, 22px);
-  margin-top: 40px;
-  text-align: center;
-  font-weight: bold;
-}
+    #feedback, #score {
+      font-weight: bold;
+      font-size: clamp(16px, 4.5vw, 18px);
+      margin-top: 20px;
+      text-align: center;
+    }
     #progress {
-  margin-top: 10px;
-  font-size: clamp(14px, 4vw, 16px);
-  color: #555;
-}
+      margin-top: 10px;
+      font-size: clamp(14px, 4vw, 16px);
+      color: #555;
+    }
+    .flashcard-controls {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 30px;
+      gap: 30px;
+      align-items: center;
+    }
+    .flashcard {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      margin: 20px auto;
+      text-align: center;
+      perspective: 1000px;
+      width: 100%;
+      max-width: 400px;
+      height: 400px;
+      cursor: pointer;
+      transition: transform 0.6s ease;
+      position: relative;
+    }
+    .flashcard-inner {
+      border-radius: 20px;
+      overflow: hidden;
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+    }
+    .flashcard.flipped .flashcard-inner {
+      transform: rotateY(180deg);
+    }
+    .flashcard-front, .flashcard-back {
+      backface-visibility: hidden;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      padding: 30px;
+      box-sizing: border-box;
+      top: 0;
+      left: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: clamp(16px, 2vw, 20px);
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+      overflow: auto;
+      background-color: white;
+    }
+    .flashcard-back {
+      transform: rotateY(180deg);
+      font-style: italic;
+    }
   </style>
   <script>
     function shuffleArray(array) {
@@ -127,19 +160,18 @@ font-size: clamp(16px, 2.5vw, 18px);
       return question;
     }
 
-    let questions = [];
-    let current = 0;
-    let score = 0;
+    let questions = [], current = 0, score = 0, flashcardMode = false;
 
-    function loadFromTheme() {
+    function loadFromTheme(mode) {
       const selectedFile = document.getElementById('temaSelect').value;
+      flashcardMode = mode === 'flashcard';
       fetch(selectedFile)
         .then(response => response.text())
         .then(text => {
           const lines = text.split('\n').map(line => line.trim()).filter(Boolean);
           questions = [];
           for (let i = 0; i < lines.length; i += 6) {
-            let q = {
+            const q = {
               question: lines[i],
               options: [lines[i+1], lines[i+2], lines[i+3], lines[i+4]],
               answer: parseInt(lines[i+5])
@@ -147,15 +179,12 @@ font-size: clamp(16px, 2.5vw, 18px);
             questions.push(shuffleQuestionOptions(q));
           }
           questions = shuffleArray(questions);
-          if (questions.length > 0) {
-            document.getElementById("quiz-container").style.display = "block";
-            document.getElementById("score").textContent = "";
-            current = 0;
-            score = 0;
-            showQuestion();
-          } else {
-            alert("Ingen gyldige spørsmål funnet i filen.");
-          }
+          current = 0; score = 0;
+          document.getElementById("score").textContent = "";
+          document.getElementById("quiz-container").style.display = flashcardMode ? "none" : "block";
+          document.getElementById("flashcard-container").style.display = flashcardMode ? "block" : "none";
+          if (flashcardMode) showFlashcard();
+          else showQuestion();
         });
     }
 
@@ -165,10 +194,8 @@ font-size: clamp(16px, 2.5vw, 18px);
       document.getElementById("feedback").textContent = "";
       document.getElementById("nextBtn").style.display = "none";
       document.getElementById("progress").textContent = `Spørsmål ${current + 1} av ${questions.length}`;
-
       const optionsDiv = document.getElementById("options");
       optionsDiv.innerHTML = "";
-
       q.options.forEach((opt, i) => {
         const btn = document.createElement("button");
         btn.textContent = opt;
@@ -195,18 +222,44 @@ font-size: clamp(16px, 2.5vw, 18px);
 
     function nextQuestion() {
       current++;
-      if (current < questions.length) {
-        showQuestion();
-      } else {
+      if (current < questions.length) showQuestion();
+      else {
         document.getElementById("quiz-container").style.display = "none";
         document.getElementById("score").textContent = `Du fikk ${score} av ${questions.length} riktige!`;
       }
+    }
+
+    function showFlashcard() {
+      const q = questions[current];
+      document.getElementById("flashcard-question").textContent = q.question;
+      document.getElementById("flashcard-answer").textContent = q.options[q.answer];
+      document.getElementById("flashcard-progress").textContent = `Kort ${current + 1} av ${questions.length}`;
+      document.querySelector('.flashcard').classList.remove('flipped');
+      document.getElementById("prevBtn").style.display = current === 0 ? 'none' : 'inline-block';
+      document.getElementById("nextBtnFlash").style.display = current === questions.length - 1 ? 'none' : 'inline-block';
+    }
+
+    function nextFlashcard() {
+      if (current < questions.length - 1) {
+        current++;
+        showFlashcard();
+      }
+    }
+
+    function prevFlashcard() {
+      if (current > 0) {
+        current--;
+        showFlashcard();
+      }
+    }
+
+    function flipFlashcard(card) {
+      card.classList.toggle('flipped');
     }
   </script>
 </head>
 <body>
   <h1>TTM4191 flervalg</h1>
-
   <label for="temaSelect">Velg tema:</label>
   <select id="temaSelect">
     <option value="TTM4191_Tema1_SmartGrid.txt">Smart Grid – definisjon, struktur og arkitektur</option>
@@ -220,7 +273,8 @@ font-size: clamp(16px, 2.5vw, 18px);
     <option value="TTM4191_Tema9_Kryptografi.txt">Kryptografi og informasjonssikkerhet (hash, MAC, signatur, PGP, TLS, sertifikater)</option>
     <option value="TTM4191_Tema10_Blandet.txt">Blandede spørsmål fra hele faget</option>
   </select>
-  <button onclick="loadFromTheme()">Start quiz</button>
+  <button onclick="loadFromTheme('quiz')">Start quiz</button>
+  <button onclick="loadFromTheme('flashcard')">Flashcards</button>
 
   <div id="quiz-container" style="display:none;">
     <div id="progress"></div>
@@ -230,4 +284,24 @@ font-size: clamp(16px, 2.5vw, 18px);
     <button onclick="nextQuestion()" style="display:none;" id="nextBtn">Neste</button>
   </div>
 
+  <div id="flashcard-container" style="display:none;">
+    <div class="flashcard" onclick="flipFlashcard(this)">
+      <div class="flashcard-inner">
+        <div class="flashcard-front" id="flashcard-question"></div>
+        <div class="flashcard-back" id="flashcard-answer"></div>
+      </div>
+    </div>
+    <div class="flashcard-controls">
+      <div style="flex: 1; text-align: left;">
+        <button onclick="prevFlashcard()" id="prevBtn" style="font-size: 2.5rem; color: #004894; background: none; border: none; padding: 0; display: none;">←</button>
+      </div>
+      <div id="flashcard-progress" style="margin-top: 20px; font-size: clamp(14px, 4vw, 16px); color: #333; text-align: center; flex: 1;"></div>
+      <div style="flex: 1; text-align: right;">
+        <button onclick="nextFlashcard()" id="nextBtnFlash" style="font-size: 2.5rem; color: #004894; background: none; border: none; padding: 0; display: none;">→</button>
+      </div>
+    </div>
+  </div>
+
   <div id="score"></div>
+</body>
+</html>
