@@ -5,11 +5,11 @@ Kryptering av data
 Lagring av sertifikater
 1
 Hva er forskjellen på HTTP/1.1 og HTTP/2?
-HTTP/2 støtter persistent connections, HTTP/1.1 ikke
 HTTP/2 støtter pipelining og multiplexing
+HTTP/1.1 støtter kryptering
 HTTP/2 bruker UDP
-HTTP/2 er tregere enn HTTP/1.1
-1
+HTTP/1.1 støtter parallelle GET
+0
 Hva er en persistent HTTP-forbindelse?
 Ny TCP-tilkobling for hvert objekt
 Én TCP-forbindelse brukes for flere objekter
@@ -18,10 +18,10 @@ Kryptert HTTP (HTTPS)
 1
 Hva er DNS?
 Et programmeringsspråk
-Et lagringssystem
 Et navneoppslagssystem for Internett
 En IP-adresseallokator
-2
+Et lagringssystem
+1
 Hva er SMTP brukt til?
 Hente e-post
 Sende e-post mellom servere
@@ -37,8 +37,8 @@ Overføre bilder
 Hva gjør en HTTP GET-forespørsel?
 Sender data til server
 Henter ressurser fra server
-Krypterer innhold
 Initierer TLS-handshake
+Krypterer innhold
 1
 Hva skjer i DNS når en klient ikke har IP-adressen cachet?
 Returnerer en feilmelding
@@ -53,188 +53,8 @@ Minimere trafikk og redusere ventetid
 Fjerne behovet for TCP
 2
 Hva betyr RTT?
-Gjennomsnittlig pakketap
-Rutetabelltid
-Tiden det tar å sende forespørsel og få svar
-Responstid for TCP
-2
-Hva er en persistent HTTP-forbindelse? (466)
-Brukes bare med e-post
-Ny TCP-tilkobling for hvert objekt
-Én TCP-forbindelse brukes for flere objekter
-Kryptert HTTP (HTTPS)
-2
-Hva skjer i DNS når en klient ikke har IP-adressen cachet? (340)
-Returnerer en feilmelding
-Krypterer domenenavnet
-Lagrer forespørselen
-Initierer en rekursiv navneoppløsning
-3
-Hva er DNS? (179)
-Et programmeringsspråk
-En IP-adresseallokator
-Et navneoppslagssystem for Internett
-Et lagringssystem
-2
-Hva er hovedgrunnen til å bruke DNS-caching? (754)
-Fjerne behovet for TCP
-Redusere antall DNS-servere
-Øke forsinkelse
-Minimere trafikk og redusere ventetid
-3
-Hva gjør en HTTP GET-forespørsel? (619)
-Initierer TLS-handshake
-Krypterer innhold
-Henter ressurser fra server
-Sender data til server
-2
-Hva er hovedgrunnen til å bruke DNS-caching? (754) (848)
-Øke forsinkelse
-Fjerne behovet for TCP
-Minimere trafikk og redusere ventetid
-Redusere antall DNS-servere
-2
-Hva gjør en HTTP GET-forespørsel? (619) (434)
-Henter ressurser fra server
-Initierer TLS-handshake
-Sender data til server
-Krypterer innhold
-0
-Hva er hovedgrunnen til å bruke DNS-caching? (754) (848) (669)
-Minimere trafikk og redusere ventetid
-Redusere antall DNS-servere
-Øke forsinkelse
-Fjerne behovet for TCP
-0
-Hva er hovedgrunnen til å bruke DNS-caching? (754) (848) (669) (962)
-Redusere antall DNS-servere
-Minimere trafikk og redusere ventetid
-Fjerne behovet for TCP
-Øke forsinkelse
-1
-Hva gjør en HTTP GET-forespørsel? (619) (434) (609)
-Initierer TLS-handshake
-Henter ressurser fra server
-Sender data til server
-Krypterer innhold
-1
-Hva er hovedgrunnen til å bruke DNS-caching? (754) (848) (669) (866)
-Øke forsinkelse
-Minimere trafikk og redusere ventetid
-Fjerne behovet for TCP
-Redusere antall DNS-servere
-1
-Hva gjør en HTTP GET-forespørsel? (619) (434) (609) (462)
-Sender data til server
-Henter ressurser fra server
-Krypterer innhold
-Initierer TLS-handshake
-1
-Hva gjør en HTTP GET-forespørsel? (619) (434) (609) (462) (211)
-Henter ressurser fra server
-Krypterer innhold
-Sender data til server
-Initierer TLS-handshake
-0
-Hva gjør en HTTP GET-forespørsel? (754)
-Henter ressurser fra server
-Initierer TLS-handshake
-Krypterer innhold
-Sender data til server
-0
-Hva gjør en HTTP GET-forespørsel? (619) (434) (609) (435)
-Initierer TLS-handshake
-Sender data til server
-Krypterer innhold
-Henter ressurser fra server
-3
-Hva betyr RTT? (667)
-Responstid for TCP
-Rutetabelltid
 Tiden det tar å sende forespørsel og få svar
 Gjennomsnittlig pakketap
-2
-Hva er hovedgrunnen til å bruke DNS-caching? (486)
-Redusere antall DNS-servere
-Fjerne behovet for TCP
-Øke forsinkelse
-Minimere trafikk og redusere ventetid
-3
-Hva er SMTP brukt til? (787)
-Generere DNS-navn
-Overføre webinnhold
-Sende e-post mellom servere
-Hente e-post
-2
-Hva er POP3 brukt til? (576)
-Hente e-post fra server
-Sende e-post
-Overføre bilder
-Autentisere brukere
-0
-Hva brukes HTTP til? (546)
-E-postkommunikasjon
-Overføring av webinnhold
-Kryptering av data
-Lagring av sertifikater
-1
-Hva er hovedgrunnen til å bruke DNS-caching? (754) (848) (669) (973)
-Øke forsinkelse
-Minimere trafikk og redusere ventetid
-Redusere antall DNS-servere
-Fjerne behovet for TCP
-1
-Hva betyr RTT? (354)
-Responstid for TCP
-Tiden det tar å sende forespørsel og få svar
 Rutetabelltid
-Gjennomsnittlig pakketap
-1
-Hva er hovedgrunnen til å bruke DNS-caching? (754) (848) (669) (973) (765)
-Redusere antall DNS-servere
-Fjerne behovet for TCP
-Øke forsinkelse
-Minimere trafikk og redusere ventetid
-3
-Hva er SMTP brukt til? (787) (110)
-Hente e-post
-Generere DNS-navn
-Overføre webinnhold
-Sende e-post mellom servere
-3
-Hva skjer i DNS når en klient ikke har IP-adressen cachet? (897)
-Krypterer domenenavnet
-Lagrer forespørselen
-Returnerer en feilmelding
-Initierer en rekursiv navneoppløsning
-3
-Hva gjør en HTTP GET-forespørsel? (619) (434) (609) (462) (273)
-Initierer TLS-handshake
-Krypterer innhold
-Sender data til server
-Henter ressurser fra server
-3
-Hva brukes HTTP til? (942)
-Kryptering av data
-E-postkommunikasjon
-Overføring av webinnhold
-Lagring av sertifikater
-2
-Hva er DNS? (353)
-Et navneoppslagssystem for Internett
-Et lagringssystem
-Et programmeringsspråk
-En IP-adresseallokator
-0
-Hva er DNS? (179) (395)
-En IP-adresseallokator
-Et lagringssystem
-Et navneoppslagssystem for Internett
-Et programmeringsspråk
-2
-Hva er en persistent HTTP-forbindelse? (709)
-Én TCP-forbindelse brukes for flere objekter
-Kryptert HTTP (HTTPS)
-Ny TCP-tilkobling for hvert objekt
-Brukes bare med e-post
+Responstid for HTTP 404
 0
