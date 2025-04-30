@@ -58,3 +58,183 @@ Identifiserer brukere
 Genererer fast lengde verdi fra input
 Teller pakker
 2
+Hvilket lag i internettprotokollstakken er ansvarlig for ruting av datagrammer ende-til-ende?
+Link-laget
+Fysisk lag
+Transportlaget
+Nettverkslaget
+3
+Digital Subscriber Line (DSL) leverer internettilgang over hvilket eksisterende medium?
+Tvunnet kobberpar (telefonlinjer)
+Satellittlenke
+Koaksialkabel
+Fiber-til-hjemmet
+0
+I e-postlevering med klient-server-modell, i hvilken retning opererer SMTP?
+Server trekker, klient sender
+Klient sender til server
+Klient trekker, server sender
+Toveis trekking
+1
+Hva er hovedtjenesten som DNS tilbyr?
+Spamfiltrering
+Oversettelse av vertsnavn til IP-adresser
+Kryptering av pakker
+Køkontroll
+1
+Sammenlignet med HTTP krever SMTP at hele meldingskroppen er kodet i:
+UTF-8
+7-bit ASCII
+Base-64
+Binær
+1
+Et TCP-socket identifiseres unikt av en 4-tuple IP-adresser og:
+Vindusstørrelser
+Sekvensnumre
+MAC-adresser
+Portnummer
+3
+Hvilken transportprotokoll tilbyr upålitelig, forbindelsesløs levering?
+ICMP
+UDP
+TCP
+SCTP
+1
+Hvilket felt i UDP-headeren angir total lengde på segmentet?
+Offset
+Checksum
+Vindusfelt
+Lengde
+3
+Inne i hver ruter er videresending paret med hvilken kjernefunksjon?
+Kryptering
+Framing
+Ruting (stivalg)
+Modulasjon
+2
+Longest-prefix matching brukes når en ruter slår opp i sin:
+DNS-cache
+NAT-tabell
+Videresendingstabell
+ARP-tabell
+2
+Hvilken svitsjestoff flytter pakker over en delt bakplanbuss?
+Crossbar-svitsjing
+Minnebasert svitsjing
+Cut-through svitsjing
+Buss-svitsjing
+3
+En Ethernet MAC-adresse er hvor mange biter lang?
+64 biter
+32 biter
+48 biter
+128 biter
+2
+Slotted ALOHA oppnår en maksimal kanaleffektivitet på omtrent:
+37 %
+18 %
+50 %
+100 %
+0
+I CSMA/CD avbryter en node overføring så snart den:
+Hører bærebølgen
+Tidsavbrudd
+Oppdager kollisjon
+Mottar ACK
+2
+Skjult terminal-problemet er karakteristisk for hvilket miljø?
+Kablede LAN
+Token Ring
+Fiber PON
+Trådløse LAN
+3
+CDMA lar flere avsendere dele en kanal ved å tildele unike:
+Spredningskoder
+Frekvenser
+Beskyttelsesintervaller
+Tidsluker
+0
+Hvilken arkitektonisk endring skiller 4G/LTE fra 3G?
+Analoge tale-kanaler
+Kretskoblet kjerne
+GSM-luftgrensesnitt
+Full IP-basert pakkekjerne
+3
+5Gs tjenesteklasse for ultralav latens er:
+URLLC
+mMTC
+NB-IoT
+eMBB
+0
+I IEC 61850 bæres raske stasjonsmeldinger av:
+SNTP
+MMS
+GOOSE
+DNP3
+2
+GOOSE og Sampled Value (SV) opererer i hvilket OSI-lag?
+Fysisk lag
+Applikasjonslaget
+Nettverkslaget
+Datalink-laget (Lag 2)
+3
+DNP3 følger hvilken generelle arkitektur?
+Publisher–subscriber
+Klient–server (master–slave)
+Peer-to-peer mesh
+Ring med token-passing
+1
+Hvilket redundansprotokoll bruker to parallelle LAN for null gjenopprettingstid?
+STP
+RSTP
+PRP (Parallel Redundancy Protocol)
+HSR
+2
+I NTP-hierarkiet, hvilket nivå er rett under primære referanseklokker?
+Stratum 10
+Stratum 1
+Stratum 2
+Stratum 0
+1
+Precision Time Protocol (PTP) oppnår typisk nøyaktighet i størrelsesorden:
+Sekunder
+Nanosekunder
+Mikrosekunder
+Millisekunder
+2
+I IEC 61850s datamodell inneholder en Logical Device en samling av:
+Fysiske enheter
+Datasett
+Logiske noder
+Attributter
+2
+ARP oversetter:
+URL-er til IP-er
+Portnummer til IP-er
+IP-adresser til MAC-adresser på samme LAN
+IP-er til vertsnavn
+2
+I CSMA betyr 'carrier sensing' at en node:
+Sender i synkroniserte slotter
+Venter på ACK før sending
+Bruker redundante kanaler
+Lytter etter ledig kanal før sending
+3
+I TCPs treveis håndtrykk er det første flagget klienten sender:
+ACK
+RST
+FIN
+SYN
+3
+Hvilken funksjon i transportlaget forhindrer at en rask avsender overvelder en treg mottaker?
+Fragmentering
+Køkontroll
+Flytkontroll (mottakervindu)
+Sjekksum
+2
+Publisher–subscriber-paradigmet i stasjonsnettverk brukes hovedsakelig av:
+MMS
+DNP3
+GOOSE og SV
+OPC-UA
+2
