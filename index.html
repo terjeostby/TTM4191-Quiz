@@ -190,3 +190,29 @@
   </script>
 </head>
 <body>
+  <h1>Quiz</h1>
+
+  <label for="temaSelect">Velg tema:</label>
+  <select id="temaSelect">
+    <option value="TTM4191_Tema1_SmartGrid.txt">Smart Grid – definisjon, struktur og arkitektur</option>
+    <option value="TTM4191_Tema2_Protokoller.txt">Kommunikasjonsprotokoller i Smart Grid</option>
+    <option value="TTM4191_Tema3_Protokollstakk.txt">Internettarkitektur og protokollstakken</option>
+    <option value="TTM4191_Tema4_Applikasjonslaget.txt">Applikasjonslaget (HTTP, DNS, SMTP, e-post, RTT)</option>
+    <option value="TTM4191_Tema5_Transportlaget.txt">Transportlaget (TCP, UDP, flow control, congestion control, sockets)</option>
+    <option value="TTM4191_Tema6_Nettverkslaget.txt">Nettverkslaget (IP, ruting, forwarding, CIDR, ARP, fragmentering)</option>
+    <option value="TTM4191_Tema7_Linklaget.txt">Linklaget (Ethernet, MAC, CRC, ARP, framing, VLAN, CSMA/CD)</option>
+    <option value="TTM4191_Tema8_Wireless.txt">Trådløse og mobile nettverk (Wi-Fi, 802.11, 5G, handover, RTS/CTS)</option>
+    <option value="TTM4191_Tema9_Kryptografi.txt">Kryptografi og informasjonssikkerhet (hash, MAC, signatur, PGP, TLS, sertifikater)</option>
+    <option value="TTM4191_Tema10_Blandet.txt">40 blandede spørsmål fra hele faget</option>
+  </select>
+  <button onclick="loadFromTheme()">Start quiz</button>
+
+  <div id="quiz-container" style="display:none;">
+    <div id="progress"></div>
+    <div class="question" id="question"></div>
+    <div id="options"></div>
+    <div id="feedback"></div>
+    <button onclick="nextQuestion()" style="display:none;" id="nextBtn">Neste</button>
+  </div>
+
+  <div id="score"></div>
