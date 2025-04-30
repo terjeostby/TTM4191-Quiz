@@ -2,7 +2,7 @@
 <html lang="no">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Quiz for Eksamen</title>
   <style>
     body {
@@ -21,70 +21,66 @@
       margin-bottom: 20px;
     }
     label {
+      display: block;
+      margin-top: 10px;
       font-size: clamp(16px, 4vw, 18px);
       color: #000;
-      margin-top: 10px;
-      display: block;
     }
     select {
-      font-size: clamp(16px, 4vw, 18px);
+      width: 100%;
       padding: 10px;
+      font-size: clamp(16px, 4vw, 18px);
       border-radius: 6px;
       border: 1px solid #ccc;
-      width: 100%;
       box-sizing: border-box;
     }
     button {
-      background-color: #004894;
-      color: white;
+      width: 100%;
+      background: #004894;
+      color: #fff;
       border: none;
       padding: 10px;
       margin-top: 15px;
       border-radius: 6px;
       cursor: pointer;
-      transition: background-color 0.3s ease;
+      transition: background 0.3s;
       font-size: clamp(16px, 2vw, 18px);
-      width: 100%;
     }
     button:hover {
-      background-color: #0056b3;
+      background: #0056b3;
     }
     .question {
       font-size: clamp(18px, 5vw, 22px);
-      margin: 25px 0 15px 0;
+      margin: 25px 0 15px;
       font-weight: 500;
       color: #222;
     }
     .option {
-      background-color: #fff;
-      color: #000;
+      display: block;
+      width: 100%;
+      text-align: left;
       padding: 12px;
       margin: 10px 0;
       border: 1px solid #ccc;
       border-radius: 6px;
+      background: #fff;
       cursor: pointer;
-      transition: background-color 0.2s ease;
-      width: 100%;
-      text-align: left;
+      transition: background 0.2s;
       font-size: clamp(16px, 4.5vw, 18px);
     }
-    .option:hover {
-      background-color: #f1f1f1;
-    }
-    .option:disabled {
-      opacity: 0.6;
-      cursor: default;
-    }
+    .option:hover { background: #f1f1f1; }
+    .option:disabled { opacity: 0.6; cursor: default; }
     #feedback, #score {
+      text-align: center;
       font-weight: bold;
       font-size: clamp(16px, 4.5vw, 18px);
       margin-top: 20px;
-      text-align: center;
     }
     #progress {
-      margin-top: 10px;
+      text-align: center;
       font-size: clamp(14px, 4vw, 16px);
       color: #555;
+      margin-top: 10px;
     }
 
     /* Flashcard CSS */
@@ -95,24 +91,23 @@
       height: 400px;
       margin: 40px auto;
       cursor: pointer;
+      touch-action: pan-y;
     }
     .flashcard-inner {
       width: 100%;
       height: 100%;
-      position: relative;
+      border-radius: 20px;
       transform-style: preserve-3d;
       transition: transform 0.6s ease;
-      border-radius: 20px;
+      position: relative;
     }
-    .flipped .flashcard-inner {
-      transform: rotateY(180deg);
-    }
+    .flipped .flashcard-inner { transform: rotateY(180deg); }
     .flashcard-front, .flashcard-back {
       position: absolute;
       width: 100%;
       height: 100%;
       border-radius: 20px;
-      background-color: white;
+      background: #fff;
       box-shadow: 0 6px 20px rgba(0,0,0,0.1);
       backface-visibility: hidden;
       display: flex;
@@ -120,8 +115,8 @@
       justify-content: center;
       text-align: center;
       padding: 30px;
-      font-size: clamp(16px, 2vw, 20px);
       box-sizing: border-box;
+      font-size: clamp(16px, 2vw, 20px);
       overflow-wrap: break-word;
     }
     .flashcard-back {
@@ -152,118 +147,6 @@
       color: #333;
     }
   </style>
-  <script>
-    // Utils for å stokke
-    function shuffleArray(array) {
-      for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-      }
-      return array;
-    }
-    function shuffleQuestionOptions(question) {
-      const original = question.options.map((opt, idx) => ({ text: opt, idx }));
-      const shuffled = shuffleArray(original);
-      question.options = shuffled.map(o => o.text);
-      question.answer = shuffled.findIndex(o => o.idx === question.answer);
-      return question;
-    }
-
-    let questions = [], current = 0, score = 0, flashcardMode = false;
-
-    function loadFromTheme(mode) {
-      const file = document.getElementById('temaSelect').value;
-      flashcardMode = (mode === 'flashcard');
-      fetch(file)
-        .then(r => r.text())
-        .then(txt => {
-          const lines = txt.split('\n').map(l => l.trim()).filter(Boolean);
-          questions = [];
-          for (let i = 0; i < lines.length; i += 6) {
-            const q = {
-              question:   lines[i],
-              options:    [lines[i+1], lines[i+2], lines[i+3], lines[i+4]],
-              answer:     parseInt(lines[i+5], 10)
-            };
-            questions.push(shuffleQuestionOptions(q));
-          }
-          shuffleArray(questions);
-          current = 0; score = 0;
-          document.getElementById('score').textContent = '';
-          document.getElementById('quiz-container').style.display = flashcardMode ? 'none' : 'block';
-          document.getElementById('flashcard-container').style.display = flashcardMode ? 'block' : 'none';
-          if (flashcardMode) showFlashcard();
-          else showQuestion();
-        });
-    }
-
-    // Quiz-funksjoner
-    function showQuestion() {
-      const q = questions[current];
-      document.getElementById('question').textContent = q.question;
-      document.getElementById('feedback').textContent = '';
-      document.getElementById('nextBtn').style.display = 'none';
-      document.getElementById('progress').textContent = `Spørsmål ${current+1} av ${questions.length}`;
-      const optDiv = document.getElementById('options');
-      optDiv.innerHTML = '';
-      q.options.forEach((opt, i) => {
-        const btn = document.createElement('button');
-        btn.textContent = opt;
-        btn.className = 'option';
-        btn.onclick = () => selectAnswer(i);
-        optDiv.appendChild(btn);
-      });
-    }
-    function selectAnswer(i) {
-      const q = questions[current];
-      const fb = document.getElementById('feedback');
-      if (i === q.answer) {
-        fb.textContent = 'Riktig!';
-        fb.style.color = 'green';
-        score++;
-      } else {
-        fb.textContent = `Feil! Riktig svar er: ${q.options[q.answer]}`;
-        fb.style.color = 'red';
-      }
-      Array.from(document.getElementsByClassName('option')).forEach(b => b.disabled = true);
-      document.getElementById('nextBtn').style.display = 'inline';
-    }
-    function nextQuestion() {
-      current++;
-      if (current < questions.length) showQuestion();
-      else {
-        document.getElementById('quiz-container').style.display = 'none';
-        document.getElementById('score').textContent =
-          `Du fikk ${score} av ${questions.length} riktige!`;
-      }
-    }
-
-    // Flashcard-funksjoner
-    function showFlashcard() {
-      const q = questions[current];
-      document.getElementById('flashcard-question').textContent = q.question;
-      document.getElementById('flashcard-answer').textContent   = q.options[q.answer];
-      document.getElementById('flashcard-progress').textContent =
-        `Kort ${current+1} av ${questions.length}`;
-      // toggle knapper synlighet
-      document.getElementById('prevBtn').style.visibility = current === 0 ? 'hidden' : 'visible';
-      document.getElementById('nextBtnFlash').style.visibility = current === questions.length-1 ? 'hidden' : 'visible';
-      // fjern eventuell flipped-state
-      document.querySelector('.flashcard').classList.remove('flipped');
-    }
-    function nextFlashcard() {
-      if (current < questions.length-1) {
-        current++;
-        showFlashcard();
-      }
-    }
-    function prevFlashcard() {
-      if (current > 0) {
-        current--;
-        showFlashcard();
-      }
-    }
-  </script>
 </head>
 <body>
   <h1>TTM4191 flervalg</h1>
@@ -309,5 +192,122 @@
   </div>
 
   <div id="score"></div>
+
+  <script>
+    // Utils for stokking
+    function shuffleArray(arr) {
+      for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+      }
+      return arr;
+    }
+    function shuffleQuestionOptions(q) {
+      const orig = q.options.map((o, i) => ({ o, i }));
+      const sh = shuffleArray(orig);
+      q.options = sh.map(x => x.o);
+      q.answer = sh.findIndex(x => x.i === q.answer);
+      return q;
+    }
+
+    let questions = [], current = 0, score = 0, flashcardMode = false;
+
+    function loadFromTheme(mode) {
+      const file = document.getElementById('temaSelect').value;
+      flashcardMode = (mode === 'flashcard');
+      fetch(file)
+        .then(r => r.text())
+        .then(txt => {
+          const lines = txt.split('\n').map(l => l.trim()).filter(Boolean);
+          questions = [];
+          for (let i = 0; i < lines.length; i += 6) {
+            questions.push(shuffleQuestionOptions({
+              question: lines[i],
+              options: [lines[i+1], lines[i+2], lines[i+3], lines[i+4]],
+              answer: parseInt(lines[i+5], 10)
+            }));
+          }
+          shuffleArray(questions);
+          current = 0; score = 0;
+          document.getElementById('score').textContent = '';
+          document.getElementById('quiz-container').style.display = flashcardMode ? 'none' : 'block';
+          document.getElementById('flashcard-container').style.display = flashcardMode ? 'block' : 'none';
+          flashcardMode ? showFlashcard() : showQuestion();
+        });
+    }
+
+    // Quiz-funksjoner
+    function showQuestion() {
+      const q = questions[current];
+      document.getElementById('question').textContent = q.question;
+      document.getElementById('feedback').textContent = '';
+      document.getElementById('nextBtn').style.display = 'none';
+      document.getElementById('progress').textContent = `Spørsmål ${current+1} av ${questions.length}`;
+      const optDiv = document.getElementById('options'); optDiv.innerHTML = '';
+      q.options.forEach((opt, i) => {
+        const btn = document.createElement('button');
+        btn.textContent = opt;
+        btn.className = 'option';
+        btn.onclick = () => selectAnswer(i);
+        optDiv.appendChild(btn);
+      });
+    }
+    function selectAnswer(i) {
+      const q = questions[current];
+      const fb = document.getElementById('feedback');
+      if (i === q.answer) { fb.textContent = 'Riktig!'; fb.style.color = 'green'; score++; }
+      else { fb.textContent = `Feil! Riktig svar er: ${q.options[q.answer]}`; fb.style.color = 'red'; }
+      Array.from(document.getElementsByClassName('option')).forEach(b => b.disabled = true);
+      document.getElementById('nextBtn').style.display = 'inline';
+    }
+    function nextQuestion() {
+      current++;
+      if (current < questions.length) showQuestion();
+      else {
+        document.getElementById('quiz-container').style.display = 'none';
+        document.getElementById('score').textContent = `Du fikk ${score} av ${questions.length} riktige!`;
+      }
+    }
+
+    // Flashcard-funksjoner
+    function showFlashcard() {
+      const q = questions[current];
+      document.getElementById('flashcard-question').textContent = q.question;
+      document.getElementById('flashcard-answer').textContent = q.options[q.answer];
+      document.getElementById('flashcard-progress').textContent = `Kort ${current+1} av ${questions.length}`;
+      document.getElementById('prevBtn').style.visibility = current===0 ? 'hidden' : 'visible';
+      document.getElementById('nextBtnFlash').style.visibility = current===questions.length-1 ? 'hidden' : 'visible';
+      document.querySelector('.flashcard').classList.remove('flipped');
+    }
+    function nextFlashcard() { if (current < questions.length-1) { current++; showFlashcard(); } }
+    function prevFlashcard() { if (current > 0) { current--; showFlashcard(); } }
+
+    // Tastatur-navigasjon og swipe
+    document.addEventListener('DOMContentLoaded', () => {
+      // Pil- og space-navigation
+      document.addEventListener('keydown', e => {
+        if (!flashcardMode) return;
+        switch(e.key) {
+          case 'ArrowRight': e.preventDefault(); nextFlashcard(); break;
+          case 'ArrowLeft': e.preventDefault(); prevFlashcard(); break;
+          case ' ':
+          case 'Spacebar': e.preventDefault(); document.querySelector('.flashcard').classList.toggle('flipped'); break;
+        }
+      });
+      // Swipe for mobile
+      const cardEl = document.querySelector('.flashcard');
+      let touchStartX = 0;
+      cardEl.addEventListener('touchstart', e => {
+        touchStartX = e.changedTouches[0].screenX;
+      });
+      cardEl.addEventListener('touchend', e => {
+        const touchEndX = e.changedTouches[0].screenX;
+        const dx = touchEndX - touchStartX;
+        if (Math.abs(dx) > 50) {
+          if (dx < 0) nextFlashcard(); else prevFlashcard();
+        }
+      });
+    });
+  </script>
 </body>
 </html>
