@@ -58,79 +58,79 @@ Muliggjør sanntidsoverføring av synkroniserte måledata
 Reduserer pakkestørrelse
 Koder meldinger i Base64
 1
-Hva er funksjonen til tidssynkronisering i SV? (5505)
+Hva er funksjonen til tidssynkronisering i SV? 
 Koder meldinger i Base64
 Sikrer korrekt datalagring
 Muliggjør sanntidsoverføring av synkroniserte måledata
 Reduserer pakkestørrelse
 2
-Hva er Sampled Values (SV)? (8316)
+Hva er Sampled Values (SV)? 
 Statistisk analysemetode
 Krypteringsalgoritme
 Protokoll for sanntidsmålinger av strøm og spenning
 Digitale signaturer
 2
-Hvilken type kommunikasjon benytter GOOSE og SV? (9222)
+Hvilken type kommunikasjon benytter GOOSE og SV? 
 Bluetooth
 TCP/IP
 Multicast over Ethernet
 Unicast
 2
-Hva er Sampled Values (SV)? (1944)
+Hva er Sampled Values (SV)? 
 Protokoll for sanntidsmålinger av strøm og spenning
 Krypteringsalgoritme
 Statistisk analysemetode
 Digitale signaturer
 0
-Hva er GOOSE-meldinger designet for? (3738)
+Hva er GOOSE-meldinger designet for? 
 Langsom dataoverføring
 Styring av hjemmebatterier
 Raske hendelsesbaserte signaler i understasjoner
 Høyoppløselig bildeoverføring
 2
-Hva er GOOSE-meldinger designet for? (3738) (3293)
+Hva er GOOSE-meldinger designet for? 
 Styring av hjemmebatterier
 Raske hendelsesbaserte signaler i understasjoner
 Høyoppløselig bildeoverføring
 Langsom dataoverføring
 1
-Hva er funksjonen til tidssynkronisering i SV? (6352)
+Hva er funksjonen til tidssynkronisering i SV? 
 Muliggjør sanntidsoverføring av synkroniserte måledata
 Sikrer korrekt datalagring
 Reduserer pakkestørrelse
 Koder meldinger i Base64
 0
-Hva er GOOSE-meldinger designet for? (3738) (3030)
+Hva er GOOSE-meldinger designet for? 
 Høyoppløselig bildeoverføring
 Langsom dataoverføring
 Raske hendelsesbaserte signaler i understasjoner
 Styring av hjemmebatterier
 2
-Hva er GOOSE-meldinger designet for? (3738) (3030) (9012)
+Hva er GOOSE-meldinger designet for? 
 Høyoppløselig bildeoverføring
 Raske hendelsesbaserte signaler i understasjoner
 Styring av hjemmebatterier
 Langsom dataoverføring
 1
-Hva er GOOSE-meldinger designet for? (3738) (3293) (6345)
+Hva er GOOSE-meldinger designet for? 
 Langsom dataoverføring
 Høyoppløselig bildeoverføring
 Raske hendelsesbaserte signaler i understasjoner
 Styring av hjemmebatterier
 2
-Hva er Sampled Values (SV)? (8316) (7650)
+Hva er Sampled Values (SV)? 
 Krypteringsalgoritme
 Protokoll for sanntidsmålinger av strøm og spenning
 Statistisk analysemetode
 Digitale signaturer
 1
-Hva er GOOSE-meldinger designet for? (3738) (3030) (2078)
+Hva er GOOSE-meldinger designet for? 
 Langsom dataoverføring
 Styring av hjemmebatterier
 Høyoppløselig bildeoverføring
 Raske hendelsesbaserte signaler i understasjoner
 3
-Hva er funksjonen til tidssynkronisering i SV? (5505) (7283)
+Hva er funksjonen til tidssynkronisering i SV? 
 Reduserer pakkestørrelse
 Sikrer korrekt datalagring
 Koder meldinger i Base64
@@ -142,97 +142,97 @@ En kommunikasjonsstandard for automatisering i kraftsystemer
 Et batteristyringssystem
 En database for måledata
 1
-Hva brukes PTP (IEEE 1588) til i Smart Grid? (6283)
+Hva brukes PTP (IEEE 1588) til i Smart Grid? 
 Adressering av MAC-enheter
 Kryptering av meldinger
 Strømmåling
 Tidssynkronisering av måleutstyr
 3
-Hva er Sampled Values (SV)? (1944) (9952)
+Hva er Sampled Values (SV)? 
 Digitale signaturer
 Protokoll for sanntidsmålinger av strøm og spenning
 Statistisk analysemetode
 Krypteringsalgoritme
 1
-Hva er funksjonen til tidssynkronisering i SV? (5505) (7283) (7068)
+Hva er funksjonen til tidssynkronisering i SV? 
 Sikrer korrekt datalagring
 Reduserer pakkestørrelse
 Koder meldinger i Base64
 Muliggjør sanntidsoverføring av synkroniserte måledata
 3
-Hva er Sampled Values (SV)? (8316) (5864)
+Hva er Sampled Values (SV)? 
 Protokoll for sanntidsmålinger av strøm og spenning
 Statistisk analysemetode
 Krypteringsalgoritme
 Digitale signaturer
 0
-Hva er GOOSE-meldinger designet for? (3738) (3030) (2078) (1991)
+Hva er GOOSE-meldinger designet for? 
 Høyoppløselig bildeoverføring
 Styring av hjemmebatterier
 Langsom dataoverføring
 Raske hendelsesbaserte signaler i understasjoner
 3
-Hvilken type kommunikasjon benytter GOOSE og SV? (4190)
+Hvilken type kommunikasjon benytter GOOSE og SV? 
 Unicast
 Multicast over Ethernet
 Bluetooth
 TCP/IP
 1
-Hva er GOOSE-meldinger designet for? (3738) (3293) (3097)
+Hva er GOOSE-meldinger designet for? 
 Høyoppløselig bildeoverføring
 Raske hendelsesbaserte signaler i understasjoner
 Styring av hjemmebatterier
 Langsom dataoverføring
 1
-Hva er GOOSE-meldinger designet for? (3534)
+Hva er GOOSE-meldinger designet for? 
 Høyoppløselig bildeoverføring
 Langsom dataoverføring
 Styring av hjemmebatterier
 Raske hendelsesbaserte signaler i understasjoner
 3
-Hva er Sampled Values (SV)? (1944) (9404)
+Hva er Sampled Values (SV)? (1944) 
 Statistisk analysemetode
 Krypteringsalgoritme
 Digitale signaturer
 Protokoll for sanntidsmålinger av strøm og spenning
 3
-Hva er Modbus? (1286)
+Hva er Modbus? 
 En standard for elektrisk sikkerhet
 En protokoll for enkel industriell kommunikasjon
 En mobilapplikasjon
 Et filformat
 1
-Hva er GOOSE-meldinger designet for? (3738) (3293) (1986)
+Hva er GOOSE-meldinger designet for? 
 Raske hendelsesbaserte signaler i understasjoner
 Høyoppløselig bildeoverføring
 Langsom dataoverføring
 Styring av hjemmebatterier
 0
-Hva er GOOSE-meldinger designet for? (3738) (3293) (1986) (9088)
+Hva er GOOSE-meldinger designet for? 
 Høyoppløselig bildeoverføring
 Raske hendelsesbaserte signaler i understasjoner
 Langsom dataoverføring
 Styring av hjemmebatterier
 1
-Hva er GOOSE-meldinger designet for? (3738) (3030) (2078) (1991) (1184)
+Hva er GOOSE-meldinger designet for? 
 Langsom dataoverføring
 Høyoppløselig bildeoverføring
 Raske hendelsesbaserte signaler i understasjoner
 Styring av hjemmebatterier
 2
-Hva er GOOSE-meldinger designet for? (3738) (3030) (2078) (1991) (1184) (6932)
+Hva er GOOSE-meldinger designet for? 
 Styring av hjemmebatterier
 Raske hendelsesbaserte signaler i understasjoner
 Langsom dataoverføring
 Høyoppløselig bildeoverføring
 1
-Hva er GOOSE-meldinger designet for? (3738) (3030) (2078) (2435)
+Hva er GOOSE-meldinger designet for? 
 Langsom dataoverføring
 Raske hendelsesbaserte signaler i understasjoner
 Styring av hjemmebatterier
 Høyoppløselig bildeoverføring
 1
-Hva er GOOSE-meldinger designet for? (3738) (3293) (3097) (3219)
+Hva er GOOSE-meldinger designet for? 
 Langsom dataoverføring
 Høyoppløselig bildeoverføring
 Raske hendelsesbaserte signaler i understasjoner
